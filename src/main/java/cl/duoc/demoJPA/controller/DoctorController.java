@@ -30,7 +30,25 @@ public class DoctorController {
         if (doctor == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.created(null).body(doctor);
+        return ResponseEntity.ok(doctor);
+    }
+
+    @GetMapping("/filter/{name}")
+    public ResponseEntity<List<Doctor>> findByName(@PathVariable String name) {
+        List<Doctor> doctors = service.findByName(name);
+        if (doctors.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(doctors);
+    }
+    @GetMapping("/filter/{name}/{lastName}")
+    public ResponseEntity<List<Doctor>> findByNameAndLastName(@PathVariable String name, @PathVariable String lastName){
+        List<Doctor> doctors = service.findByNameAndLastName(name, lastName);
+        if (doctors.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(doctors);
     }
 
     @PostMapping()

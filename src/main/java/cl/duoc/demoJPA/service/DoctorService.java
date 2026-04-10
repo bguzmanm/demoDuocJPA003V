@@ -23,6 +23,14 @@ public class DoctorService {
         return repository.findById(id).orElse(null);
     }
 
+    public List<Doctor> findByName(String name){
+        return repository.findByName(name);
+    }
+
+    public List<Doctor> findByNameAndLastName(String name, String lastName){
+        return repository.findByNameAndLastName(name, lastName);
+    }
+
     public Doctor create(Doctor doctor) {
         if (repository.findById(doctor.getId()).isPresent()) {
             throw new RuntimeException("Doctor with id " + doctor.getId() + " already exists");
