@@ -1,22 +1,17 @@
-package cl.duoc.demoJPA.model;
+package cl.duoc.demoJPA.dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity()
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Patient {
-    @Id()
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PatientDto {
     int id;
     String name;
-
-    @Column(name="last_name")
     String lastName;
     String email;
     String phone;
+    String fullName;
 }
