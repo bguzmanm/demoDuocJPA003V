@@ -9,17 +9,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Doctor {
+public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    @Column(name="last_name")
-    String lastName;
-    String email;
-    String phone;
-    String birthday;
+    private Long id;
+    private String name;
+    private long stock;
+    @Column(name = "stock_min")
+    private long stockMin;
+
 
 }
-
-

@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class DoctorDto {
     @NotNull
-    int id;
+    Long id;
     @NotNull
     String name;
     @NotNull

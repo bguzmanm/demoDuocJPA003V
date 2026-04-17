@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class Patient {
     @Id()
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Long id;
     String name;
 
     @Column(name="last_name")

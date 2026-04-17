@@ -23,7 +23,7 @@ public class DoctorServiceImpl implements DoctorService {
         return mapper.toDtoList(repository.findAll());
     }
 
-    public DoctorDto findById(int id){
+    public DoctorDto findById(Long id){
         return mapper.toDto(
                 repository.findById(id)
                         .orElse(null)
@@ -49,14 +49,14 @@ public class DoctorServiceImpl implements DoctorService {
         );
     }
 
-    public DoctorDto update(int id, DoctorDto doctor){
+    public DoctorDto update(Long id, DoctorDto doctor){
         if (repository.findById(id).isEmpty()) {
             throw new RuntimeException("Doctor with id " + id + " does not exist");
         }
         return mapper.toDto(repository.save(mapper.fromDto(doctor)));
     }
 
-    public boolean delete(int id){
+    public boolean delete(Long id){
         boolean exist = repository.existsById(id);
         repository.deleteById(id);
         return exist;

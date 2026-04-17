@@ -10,10 +10,10 @@ import java.util.List;
 public interface DoctorService {
 
     List<DoctorDto> findAll();
-    DoctorDto findById(int id);
+    DoctorDto findById(Long id);
     List<DoctorDto> findByName(String name);
     List<DoctorDto> findByNameAndLastName(String name, String lastName);
     DoctorDto create(DoctorDto doctor);
-    DoctorDto update(int id, DoctorDto doctor);
-    boolean delete(int id);
+    DoctorDto update(Long id, DoctorDto doctor);
+    boolean delete(Long id);
 }

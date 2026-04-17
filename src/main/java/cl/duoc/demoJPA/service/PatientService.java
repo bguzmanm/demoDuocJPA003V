@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface PatientService {
     List<PatientDto> findAll();
-    PatientDto findById(int id);
+    PatientDto findById(Long id);
     PatientDto create(PatientDto patient);
     PatientDto update(PatientDto patient);
-    boolean deleteById(int id);
+    boolean deleteById(Long id);
 }
